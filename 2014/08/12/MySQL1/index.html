@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL (1) | Alex的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alert  DML ，Data Manipulation">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL (1)">
+<meta property="og:url" content="http://yoursite.com/2014/08/12/MySQL1/index.html">
+<meta property="og:site_name" content="Alex的个人博客">
+<meta property="og:description" content="SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alert  DML ，Data Manipulation">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-26T02:55:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL (1)">
+<meta name="twitter:description" content="SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alert  DML ，Data Manipulation">
+  
+    <link rel="alternate" href="/atom.xml" title="Alex的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Alex的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-MySQL1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/08/12/MySQL1/" class="article-date">
+  <time datetime="2014-08-12T05:09:53.000Z" itemprop="datePublished">2014-08-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL (1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SQL语句基础"><a href="#SQL语句基础" class="headerlink" title="SQL语句基础"></a>SQL语句基础</h3><ol>
+<li>语法要求<ul>
+<li>所有内容都需要使用英文符号</li>
+<li>每一个语句必须使用;结尾</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>SQL (structured query language)</li>
+<li>SQL 是操作和检索关系型数据库的标准语言（CURD）</li>
+<li><p>SQL分类</p>
+<ul>
+<li><p>DDL ,Data Definition Language,数据定义语言  定义结构</p>
+<pre><code>关键字： create drop alert
+</code></pre></li>
+<li><p>DML ，Data Manipulation Language,数据操作语言</p>
+<pre><code>关键字：insert update delete
+</code></pre></li>
+<li><p>DQL ，Data queries Language,数据查询语言，查询（检索）</p>
+<pre><code>关键字：select
+</code></pre></li>
+<li><p>DTL ,Data Trasaction Language ,事务处理语言</p>
+<pre><code>关键字： transaction commit rollback
+</code></pre></li>
+<li><p>DCL ,Data Control Language,数据控制语言，权限</p>
+<pre><code>关键字： 授权grant ,回收revoke
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="二，-DDL-数据定义语言"><a href="#二，-DDL-数据定义语言" class="headerlink" title="二， DDL 数据定义语言"></a>二， DDL 数据定义语言</h4><ol>
+<li><p>数据库</p>
+<pre><code>创建： create database [IF NOT EXISTS] 数据库名称 [Character set 字符集名称];
+删除： drop database 数据库名称;
+修改： alert database 数据库名称 character set 字符集名称；
+</code></pre></li>
+<li><p>表名</p>
+<ul>
+<li><p>创建： create table 表名称(字段描述1,字段描述2,…);</p>
+<pre><code>字段描述： 字段名称 字段类型
+    字段名称： 自定义
+    字段类型：
+        (1)字符串string:
+           char(n) :固定字符串
+           varchar(n): 可变字符串【】
+        (2)数字Number
+           mysql类型       Java中类型
+            bit            boolean
+            tinyint        byte
+            smallint       short
+            int            int【】
+            bigint              long
+            double(m,d)     double
+            decimal         number
+        （3)日期时间
+            date  
+            time
+            datetime
+            timestamp
+         （4）大数据
+           字节：  blob     64k
+                  longblog 4g    
+           字符：
+                       text     64k
+                       longtext 4g
+     例如： create table user(
+        int varchar(32), 
+        name varchar(50),
+        age int
+        );
+</code></pre></li>
+<li>删除： drop table [IF EXISTS] 表名；</li>
+<li><p>修改表：</p>
+<pre><code>添加字段：alter table 表名 add column count int; 
+</code></pre></li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/08/12/MySQL1/" data-id="cj810j31b000b5jdu58ksleuh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/08/13/MySQL2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MySQL (2)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJs/">NodeJs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Games/">Games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Games/" style="font-size: 10px;">Games</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/09/25/Hello的副本/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/25/servlet介绍/">Servlet介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/25/OneNightInBeiJing/">One Night In Beijing</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/25/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/25/Hello/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 kmzhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
