@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/8 | Alex的个人博客</title>
+  <title>Android插件化入门1 | Alex的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Alex的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/2014/08/index.html">
+  <meta name="description" content="Android插件化入门系列  概述插件化涉及的东西很多，所以我们需要多个维度去学习。大概分为5个部分：预备知识、入门、进阶、系列、类库。一步一步深入了解插件的原理。 基础部分 Java类加载器  类加载器（class loader）是 Java中的一个很重要的概念。 类加载器负责加载 Java 类的字节代码到 Java 虚拟机中。 本文首先详细介绍了 Java 类加载器的基本概念，包括代理模">
+<meta name="keywords" content="插件化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android插件化入门1">
+<meta property="og:url" content="http://yoursite.com/2015/08/13/Android插件化1/index.html">
 <meta property="og:site_name" content="Alex的个人博客">
+<meta property="og:description" content="Android插件化入门系列  概述插件化涉及的东西很多，所以我们需要多个维度去学习。大概分为5个部分：预备知识、入门、进阶、系列、类库。一步一步深入了解插件的原理。 基础部分 Java类加载器  类加载器（class loader）是 Java中的一个很重要的概念。 类加载器负责加载 Java 类的字节代码到 Java 虚拟机中。 本文首先详细介绍了 Java 类加载器的基本概念，包括代理模">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-30T01:08:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alex的个人博客">
+<meta name="twitter:title" content="Android插件化入门1">
+<meta name="twitter:description" content="Android插件化入门系列  概述插件化涉及的东西很多，所以我们需要多个维度去学习。大概分为5个部分：预备知识、入门、进阶、系列、类库。一步一步深入了解插件的原理。 基础部分 Java类加载器  类加载器（class loader）是 Java中的一个很重要的概念。 类加载器负责加载 Java 类的字节代码到 Java 虚拟机中。 本文首先详细介绍了 Java 类加载器的基本概念，包括代理模">
   
     <link rel="alternate" href="/atom.xml" title="Alex的个人博客" type="application/atom+xml">
   
@@ -60,77 +65,79 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2014" class="archive-year">2014</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/08/13/MySQL3/" class="archive-article-date">
-  <time datetime="2014-08-13T05:09:53.000Z" itemprop="datePublished">Aug 13</time>
+        <section id="main"><article id="post-Android插件化1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/13/Android插件化1/" class="article-date">
+  <time datetime="2015-08-13T05:09:53.000Z" itemprop="datePublished">2015-08-13</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/08/13/MySQL3/">MySQL (3)</a>
+    <h1 class="article-title" itemprop="name">
+      Android插件化入门1
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/08/13/MySQL2/" class="archive-article-date">
-  <time datetime="2014-08-13T05:09:53.000Z" itemprop="datePublished">Aug 13</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/08/13/MySQL2/">MySQL (2)</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2014/08/12/MySQL1/" class="archive-article-date">
-  <time datetime="2014-08-12T05:09:53.000Z" itemprop="datePublished">Aug 12</time>
-</a>
+        <blockquote>
+<p>Android插件化入门系列</p>
+</blockquote>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>插件化涉及的东西很多，所以我们需要多个维度去学习。大概分为5个部分：预备知识、入门、进阶、系列、类库。一步一步深入了解插件的原理。</p>
+<h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-classloader/" target="_blank" rel="external">Java类加载器</a></li>
+</ol>
+<pre><code>类加载器（class loader）是 Java中的一个很重要的概念。
+类加载器负责加载 Java 类的字节代码到 Java 虚拟机中。
+本文首先详细介绍了 Java 类加载器的基本概念，包括代理模
+式、加载类的具体过程和线程上下文类加载器等，接着介绍如何开
+发自己的类加载器，最后介绍了类加载器在 Web 容器和 OSGi中
+的应用。
+</code></pre>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2014/08/12/MySQL1/">MySQL (1)</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/13/Android插件化1/" data-id="cj86ndbe00000l2duj7uvugg9" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/插件化/">插件化</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/12/just-to-test/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          just to test
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/12/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">test</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
