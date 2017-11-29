@@ -1,97 +1,402 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+
+
+
   
-  <title>MySQL (1) | Alex的个人博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alert  DML ，Data Manipulation">
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MySQL," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一，SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alter  DML ，Data Manipulati">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL (1)">
 <meta property="og:url" content="http://yoursite.com/2014/08/12/MySQL1/index.html">
-<meta property="og:site_name" content="Alex的个人博客">
-<meta property="og:description" content="SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alert  DML ，Data Manipulation">
+<meta property="og:site_name" content="Alex‘s Blog">
+<meta property="og:description" content="一，SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alter  DML ，Data Manipulati">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-26T02:55:39.000Z">
+<meta property="og:updated_time" content="2017-10-18T02:43:21.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL (1)">
-<meta name="twitter:description" content="SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alert  DML ，Data Manipulation">
+<meta name="twitter:description" content="一，SQL语句基础 语法要求 所有内容都需要使用英文符号 每一个语句必须使用;结尾     SQL (structured query language) SQL 是操作和检索关系型数据库的标准语言（CURD） SQL分类  DDL ,Data Definition Language,数据定义语言  定义结构 关键字： create drop alter  DML ，Data Manipulati">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2014/08/12/MySQL1/"/>
+
+
+
+
+
+  <title>MySQL (1) | Alex‘s Blog</title>
   
-    <link rel="alternate" href="/atom.xml" title="Alex的个人博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+
+
+
+
+
+
 
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Alex的个人博客</a>
-      </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex‘s Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-MySQL1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/12/MySQL1/" class="article-date">
-  <time datetime="2014-08-12T05:09:53.000Z" itemprop="datePublished">2014-08-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/MySQL/">MySQL</a>
+        <p class="site-subtitle"></p>
+      
   </div>
 
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      MySQL (1)
-    </h1>
+</div>
+
+<nav class="site-nav">
   
 
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/08/12/MySQL1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kmzhao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex‘s Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL (1)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2014-08-12T13:09:53+08:00">
+                2014-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
       </header>
     
-    <div class="article-entry" itemprop="articleBody">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h3 id="SQL语句基础"><a href="#SQL语句基础" class="headerlink" title="SQL语句基础"></a>SQL语句基础</h3><ol>
+      
+
+      
+        <h4 id="一，SQL语句基础"><a href="#一，SQL语句基础" class="headerlink" title="一，SQL语句基础"></a>一，SQL语句基础</h4><ol>
 <li>语法要求<ul>
 <li>所有内容都需要使用英文符号</li>
 <li>每一个语句必须使用;结尾</li>
@@ -104,7 +409,7 @@
 <li><p>SQL分类</p>
 <ul>
 <li><p>DDL ,Data Definition Language,数据定义语言  定义结构</p>
-<pre><code>关键字： create drop alert
+<pre><code>关键字： create drop alter
 </code></pre></li>
 <li><p>DML ，Data Manipulation Language,数据操作语言</p>
 <pre><code>关键字：insert update delete
@@ -127,7 +432,7 @@
 删除： drop database 数据库名称;
 修改： alert database 数据库名称 character set 字符集名称；
 </code></pre></li>
-<li><p>表名</p>
+<li><p>表</p>
 <ul>
 <li><p>创建： create table 表名称(字段描述1,字段描述2,…);</p>
 <pre><code>字段描述： 字段名称 字段类型
@@ -162,148 +467,597 @@
         age int
         );
 </code></pre></li>
-<li>删除： drop table [IF EXISTS] 表名；</li>
-<li><p>修改表：</p>
-<pre><code>添加字段：alter table 表名 add column count int; 
+<li><p>删除： </p>
+<pre><code>drop table [IF EXISTS] 表名；
+</code></pre></li>
+<li><p>修改：</p>
+<pre><code>alter table 表名 rename to 新表名；
+</code></pre></li>
+</ul>
+</li>
+<li><p>字段</p>
+<ul>
+<li><p>添加字段 </p>
+<pre><code>alter table 表名 add column 字段描述; 
+例如： alter table users add column name int;
+</code></pre></li>
+<li><p>删除字段：</p>
+<pre><code>alter table 表名 drop [column] 字段名称；
+</code></pre></li>
+<li><p>修改字段：</p>
+<pre><code>alter table 表名 change [column] old字段名称 new字段描述；
 </code></pre></li>
 </ul>
 </li>
 </ol>
+<h4 id="三，DML-数据操纵语言（数据）"><a href="#三，DML-数据操纵语言（数据）" class="headerlink" title="三，DML-数据操纵语言（数据）"></a>三，DML-数据操纵语言（数据）</h4><h6 id="3-1-插入数据-insert"><a href="#3-1-插入数据-insert" class="headerlink" title="3.1 插入数据 insert"></a>3.1 插入数据 insert</h6><ol>
+<li><p>格式</p>
+<pre><code>格式1： insert into 表名 values(值1，值2，...);
+格式2： insert into 表明(字段名称1，字段名称2，...) values(值1，值2，...);
+</code></pre></li>
+</ol>
+<h6 id="3-2更新数据"><a href="#3-2更新数据" class="headerlink" title="3.2更新数据"></a>3.2更新数据</h6><ol>
+<li><p>update 表名 set 字段1=值，字段2=值…;</p>
+<pre><code>例如： update users set age=35;
+</code></pre></li>
+<li><p>update 表名 set 字段1=值，字段2=值… where条件</p>
+<pre><code>条件的格式： 字段 运算符 值     例如：id=&apos;u01&apos;
+例如：update users set age=35 where id=2;
+</code></pre></li>
+</ol>
+<h6 id="3-3-删除数据"><a href="#3-3-删除数据" class="headerlink" title="3.3 删除数据"></a>3.3 删除数据</h6><ol>
+<li><p>delete from 表名 where 条件；</p>
+<pre><code>例如： delete from users where id&gt;1;
+</code></pre></li>
+</ol>
+<h4 id="四，DQL-–-Data-queries-Language-数据查询语言，查询（检索"><a href="#四，DQL-–-Data-queries-Language-数据查询语言，查询（检索" class="headerlink" title="四，DQL – Data queries Language,数据查询语言，查询（检索)"></a>四，DQL – Data queries Language,数据查询语言，查询（检索)</h4><h6 id="4-1-没有条件查询"><a href="#4-1-没有条件查询" class="headerlink" title="4.1 没有条件查询"></a>4.1 没有条件查询</h6><ol>
+<li><p>查询所有</p>
+<pre><code>select * from users;
+</code></pre></li>
+<li><p>查询部分信息</p>
+<pre><code>select id,firstname,secondname from users;
+</code></pre></li>
+<li><p>查询用户编号、姓名，及格(与60分差)</p>
+<pre><code>select id,firstname,secondname, count-60 from users;
+select id,concat(firstname,secondname), count-60 from users;
+</code></pre></li>
+<li><p>修改上面查询显示字段名称，用”姓名”表示姓名，用”及格”表示及格</p>
+<pre><code>select id,concat(firstname,secondname) as 姓名, count-60 及格 from users;
+select id,concat(firstname,secondname) as `姓 名`, count-60 及格 from users;
+字段别名： 字段名称 [AS] 别名
+</code></pre></li>
+</ol>
+<h6 id="4-2-有条件查询"><a href="#4-2-有条件查询" class="headerlink" title="4.2 有条件查询"></a>4.2 有条件查询</h6><ol>
+<li><p>查询分数等于60的学生</p>
+<pre><code>select * from users where count=60;
+</code></pre></li>
+<li><p>查询姓”张”学生</p>
+<pre><code>select * from users where firstname=&apos;张&apos;;
+</code></pre></li>
+<li><p>查询年龄大于18的学生</p>
+<pre><code>select * from users where age &gt; 18;
+</code></pre></li>
+<li><p>显示分数在60-80的学生</p>
+<pre><code>select * from users where count &gt;=60 and count &lt;= 80;
+select * from users where count between 60 and 80;
+</code></pre></li>
+<li><p>查询编号为u001和u002的学生</p>
+<pre><code>select * from users where id=&apos;u001&apos; or id=&apos;u002&apos;;
+select * from users where id in (&apos;u001&apos;,&apos;u002&apos;);
+</code></pre></li>
+<li><p>查询年龄是18或20的学生</p>
+<pre><code>select * from users where age = 18 or age = 20;
+</code></pre></li>
+<li><p>查询名中含有”云”的学生</p>
+<pre><code>select * from users where secondname like &apos;云&apos;;
+#相当于=
+select * from users where secondname like &apos;%云%&apos;;
+模糊查询(不完全匹配查询)格式：字段 like 值
+        %，匹配多个值
+            &apos;%云&apos; ，以”云“结尾
+            &apos;云%&apos; ，以”云“开头
+            &apos;%云%&apos;，包含”云“
+        _ 匹配一个字符
+</code></pre></li>
+<li><p>查询名中第二字还有”云”的学生</p>
+<pre><code>select * from users where secondname like &apos;_云%&apos;;
+</code></pre></li>
+<li><p>查询分数小于60 或 大于90分的学生</p>
+<pre><code>select * from users where count &lt; 60 or count &gt; 90;
+</code></pre></li>
+<li><p>查询分数等于60 或者  分数大于90并且年龄大于23</p>
+<pre><code>select * from users where count=60 or count &gt; 90 and age &gt; 23 ;
+select * from users where count=60 or (count &gt; 90 and age &gt; 23) ;
+    * 注意：and 优先级高于 or
+</code></pre></li>
+<li><p>查询没有考试的学生</p>
+<pre><code>select * from users where count is null ;
+</code></pre></li>
+<li><p>查询所有考试的学生</p>
+<pre><code>select * from users where count is not null ;
+</code></pre></li>
+<li><p>如果数据包含%，查询所有数据中含有%</p>
+<pre><code>insert into users(`id`,`firstname`,`age`,`secondname`,`count`) values (&apos;u009&apos;,&apos;小%乔&apos;,12,&apos;推&apos;,100);
+select * from users where firstname like &apos;%\%%&apos;;
+#转义
+*思考：如果数据一个引号
+    select * from users where firstname = &apos;&apos;&apos;;
+#效果：不能执行完成，需要继续输入内容。
+        * 所有数据如果含有&apos;，请使用转义\&apos;
+</code></pre></li>
+</ol>
+<h6 id="4-3-聚合函数的使用-聚合函数：将一组数据整合成一个数据函数"><a href="#4-3-聚合函数的使用-聚合函数：将一组数据整合成一个数据函数" class="headerlink" title="4.3 聚合函数的使用 ,聚合函数：将一组数据整合成一个数据函数"></a>4.3 聚合函数的使用 ,聚合函数：将一组数据整合成一个数据函数</h6><ol>
+<li><p>有多少条记录，计数count(*|字段名称|数字)</p>
+<pre><code>select count(*) from users;
+select count(id) from users;
+select count(co) from users;    
 
+结论： 如果是字段，不对null数据进行计算
+mysql&gt; select count(1) from users;
+</code></pre></li>
+<li><p>平均成绩，平均avg(字段名称)</p>
+<pre><code>select avg(成绩列名) from users;    
+</code></pre></li>
+<li><p>不含null 最高成绩，max(字段)</p>
+<pre><code>select max(成绩字段) from users;
+</code></pre></li>
+<li><p>最小年龄，min(字段)</p>
+<pre><code>select min(age) from users;
+</code></pre></li>
+<li><p>班级总成绩，求和sum(字段)</p>
+<pre><code>select sum(count) from users;
+</code></pre></li>
+<li><p>平均成绩</p>
+<pre><code>select sum(count)/count(*) from users;
+</code></pre></li>
+<li><p>查询所有的年龄数</p>
+<pre><code>mysql&gt; select age from users;
+排序格式：select .... where ... order by 排序字段 asc|desc                * asc 升序，默认可以不写
+       * desc 降序
+   mysql&gt; select age from users order by age desc;
+</code></pre></li>
+<li><p>去重复</p>
+<pre><code>mysql&gt; select distinct age from users order by age desc;
+mysql&gt; select distinct age,count from users order by age desc;
+    * age 和count 必须一样才重复
+mysql&gt; update users set count = 60 where id = &apos;u006&apos;; # 两个18和60，将去重
+</code></pre></li>
+<li><p>总结：  max /min/avg/sum/计算的字段类型必须是整形</p>
+<pre><code>* 设置没有考试
+    * update users set count = null where id = &apos;u006&apos;;
+</code></pre></li>
+</ol>
+<h6 id="4-4-分组"><a href="#4-4-分组" class="headerlink" title="4.4 分组"></a>4.4 分组</h6><ol>
+<li><p>添加班级字段（classes）</p>
+<pre><code>mysql&gt; alter table users add column classes varchar(3);
+mysql&gt; update users set classes=&apos;1&apos; where id in (&apos;u001&apos;,&apos;u002&apos;,&apos;u003&apos;,&apos;u004&apos;);
+mysql&gt; update users set classes=&apos;2&apos; where id in (&apos;u005&apos;,&apos;u006&apos;,&apos;u007&apos;);
+</code></pre></li>
+<li><p>查询1班和2班的平均成绩</p>
+<pre><code>* 平均成绩：mysql&gt; select sum(count)/count(*) from users;
+* 分组：select ... where .. group by 分组字段 having 分组条件
+    mysql&gt; select sum(count)/count(*) from users group by classes;
+* 注意：查询数据项select... 只能是聚合函数或分组字段
+    select classes , sum(count)/count(*) from users group by classes;
+    select id, classes , sum(count)/count(*) from users group by classes; #分组之后id没有意义
+</code></pre></li>
+<li><p>查询班级平均成绩不及格的班级详细人员信息</p>
+<pre><code>* mysql&gt; select * from users where classes = &apos;2&apos;;
+</code></pre><ul>
+<li>分组的条件，过滤不及格班级</li>
+</ul>
+</li>
+</ol>
+<pre><code>            mysql&gt; select classes as 班级,sum(count)/count(*) as countAvg from users group by classes having countAvg &lt; 60;
+
+- 多表操作
+            select A.* from A,B where A.id = B.id
+            select a.* from ,A a,B as b where a.id = b.id
+                表的别名：表名 AS 别名
+- 结果
+
+            select users.* from users,B as temp where users.classes = temp.classes;
+            select users.* from users,(select classes,sum(count)/count(*) as countAvg from users group by classes having countAvg &lt; 60) as temp where users.classes = temp.classes;
+            select users.* from users,(select classes,sum(count)/count(*) as countAvg from users group by classes having countAvg &lt; 60) as temp where users.classes = temp.classes;
+</code></pre><ol>
+<li><p>总结：</p>
+<pre><code>select distinct *|字段|聚合函数 from 表名
+where 查询条件
+group by 分组字段
+    having 分组条件
+order by 排序字段 asc|desc
+</code></pre></li>
+</ol>
+<h4 id="五-总结"><a href="#五-总结" class="headerlink" title="五.总结"></a>五.总结</h4><h6 id="5-1-DQL"><a href="#5-1-DQL" class="headerlink" title="5.1 DQL"></a>5.1 DQL</h6><pre><code>select *|id from 表名
+    where id=&apos;u001&apos;
+    group by classes having avg &lt; 60
+    order by age desc
+</code></pre><h6 id="5-2-DML"><a href="#5-2-DML" class="headerlink" title="5.2 DML"></a>5.2 DML</h6><pre><code>insert into 表名(字段) values(值)
+update 表名 set 字段=值,字段=值,... where 条件
+delete from  表名 where 条件
+</code></pre><h6 id="5-3-DDL"><a href="#5-3-DDL" class="headerlink" title="5.3 DDL"></a>5.3 DDL</h6><pre><code>create database 数据库;
+drop database 数据库;
+create table 表名(字段描述);
+    * 字段描述：字段名称  类型  约束
+drop table 表名;
+</code></pre>
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/08/12/MySQL1/" data-id="cj86ndbev0007l2duyye215yr" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/09/13/Java_jdbc/" rel="next" title="Java_JDBC">
+                <i class="fa fa-chevron-left"></i> Java_JDBC
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/08/13/MySQL2/" rel="prev" title="MySQL (2)">
+                MySQL (2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
     </footer>
   </div>
   
-    
-<nav id="article-nav">
   
-    <a href="/2014/08/13/MySQL2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
         
-          MySQL (2)
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">kmzhao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一，SQL语句基础"><span class="nav-number">1.</span> <span class="nav-text">一，SQL语句基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二，-DDL-数据定义语言"><span class="nav-number">2.</span> <span class="nav-text">二， DDL 数据定义语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三，DML-数据操纵语言（数据）"><span class="nav-number">3.</span> <span class="nav-text">三，DML-数据操纵语言（数据）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1-插入数据-insert"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1 插入数据 insert</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2更新数据"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2更新数据</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-3-删除数据"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3 删除数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四，DQL-–-Data-queries-Language-数据查询语言，查询（检索"><span class="nav-number">4.</span> <span class="nav-text">四，DQL – Data queries Language,数据查询语言，查询（检索)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#4-1-没有条件查询"><span class="nav-number">4.0.1.</span> <span class="nav-text">4.1 没有条件查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-2-有条件查询"><span class="nav-number">4.0.2.</span> <span class="nav-text">4.2 有条件查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-3-聚合函数的使用-聚合函数：将一组数据整合成一个数据函数"><span class="nav-number">4.0.3.</span> <span class="nav-text">4.3 聚合函数的使用 ,聚合函数：将一组数据整合成一个数据函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-4-分组"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.4 分组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五-总结"><span class="nav-number">5.</span> <span class="nav-text">五.总结</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#5-1-DQL"><span class="nav-number">5.0.1.</span> <span class="nav-text">5.1 DQL</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-2-DML"><span class="nav-number">5.0.2.</span> <span class="nav-text">5.2 DML</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-3-DDL"><span class="nav-number">5.0.3.</span> <span class="nav-text">5.3 DDL</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-</nav>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kmzhao</span>
 
   
-</article>
+</div>
 
-</section>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJs/">NodeJs</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Games/">Games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件化/">插件化</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Games/" style="font-size: 10px;">Games</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/NodeJs/" style="font-size: 10px;">NodeJs</a> <a href="/tags/插件化/" style="font-size: 10px;">插件化</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">August 2014</a></li></ul>
-    </div>
-  </div>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/09/25/NodeJs/">NodeJs</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/25/servlet介绍/">Servlet介绍</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/25/OneNightInBeiJing/">One Night In Beijing</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/25/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/25/Hello的副本/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 kmzhao<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
+    
 
   </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
